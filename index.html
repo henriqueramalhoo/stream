@@ -13,9 +13,6 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         header {
@@ -34,6 +31,7 @@
             gap: 20px;
             padding: 40px 20px;
             max-width: 1200px;
+            margin: auto;
         }
 
         .card {
@@ -51,63 +49,62 @@
             background-color: #2b2b2b;
         }
 
-        .card-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
         .card img {
             width: 100%;
             height: 150px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+        }
+
+        .search-bar {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: 1px solid #444;
+            background-color: #222;
+            color: white;
+        }
+
+        footer {
+            padding: 10px;
+            background-color: #1f1f1f;
+            text-align: center;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-
-<header>
-    StreamHub - Assista ao vivo e sob demanda
-</header>
-
-<div class="container">
+<header>StreamHub - Assista ao vivo e sob demanda</header>
+<div class="search-bar">
+    <input type="text" placeholder="Pesquise seu canal ou conteúdo...">
+</div>
+<div class="container" id="content-grid">
+    <!-- Exemplo de Cartão -->
     <div class="card" onclick="window.location.href='sportv1.html';">
         <img src="sportv.jpg" alt="SportTV1">
         <div class="card-title">SportTV1</div>
     </div>
-
-    <div class="card" onclick="window.location.href='eleven1.html';">
-        <img src="eleven.jpg" alt="Eleven Sports">
-        <div class="card-title">ELEVEN SPORTS 1</div>
-    </div>
-
-    <div class="card" onclick="window.location.href='BENFICATV.html';">
-        <img src="benficatv.jpg" alt="Benfica TV">
-        <div class="card-title">Benfica TV</div>
-    </div>
-
-    <div class="card" onclick="window.location.href='filmeseseries.html';">
-        <img src="filmes.jpg" alt="Filmes e Séries">
-        <div class="card-title">Filmes e Séries</div>
-    </div>
-
-    <div class="card" onclick="window.location.href='ufc.html';">
-        <img src="ufc.jpg" alt="UFC">
-        <div class="card-title">UFC</div>
-    </div>
-
-    <div class="card" onclick="window.location.href='usa.html';">
-        <img src="usa.jpg" alt="USA Network">
-        <div class="card-title">USA</div>
-    </div>
-
-    <div class="card" onclick="window.location.href='disney.html';">
-        <img src="disney.jpg" alt="Disney">
-        <div class="card-title">Disney</div>
-    </div>
 </div>
+<footer>&copy; 2025 StreamHub. Todos os direitos reservados.</footer>
+<script>
+    const searchInput = document.querySelector('input[type="text"]');
+    const contentGrid = document.getElementById('content-grid');
+    const cards = contentGrid.querySelectorAll('.card');
 
+    searchInput.addEventListener('input', () => {
+        const searchText = searchInput.value.toLowerCase();
+        cards.forEach(card => {
+            const title = card.querySelector('.card-title').textContent.toLowerCase();
+            card.style.display = title.includes(searchText) ? '' : 'none';
+        });
+    });
+</script>
 </body>
 </html>

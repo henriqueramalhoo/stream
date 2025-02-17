@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Streams</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        button {
+            width: 100%;
+            height: 60px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            background: linear-gradient(45deg, #0091ff, #76c4ff);
+            box-shadow: 0 4px 8px rgba(87, 147, 206, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #0162ad, #2ea2fa);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button onclick="window.location.href='sportv1.html';">SportTV1</button>
+        <button onclick="window.location.href='eleven1.html';">ELEVEN SPORTS 1</button>
+        <button onclick="window.location.href='BENFICATV.html';">Benfica TV</button>
+        <button onclick="window.location.href='filmeseseries.html';">Filmes e Séries</button>
+        <button onclick="window.location.href='ufc.html';">UFC</button>
+        <button onclick="window.location.href='usa.html';">USA</button>
+    </div>
+</body>
+</html>
